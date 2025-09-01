@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HillCid- Daily support in your pocket</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #3a86ff;
+        }
+        
+        .logo span {
+            color: #ff006e;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #3a86ff;
+        }
+        
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #3a86ff 0%, #8338ec 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #ff006e;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #ff2e8a;
+        }
+        
+        /* Testimonial section */
+        .testimonial {
+            background-color: #fff;
+            padding: 40px;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            border-left: 4px solid #3a86ff;
+        }
+        
+        /* Pricing section */
+        .pricing {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .pricing-header h2 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .pricing-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            width: 280px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            color: #3a86ff;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "✓";
+            color: #3a86ff;
+            position: absolute;
+            left: 0;
+        }
+        
+        .card-button {
+            display: block;
+            text-align: center;
+            background-color: #3a86ff;
+            color: white;
+            padding: 10px 0;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .card-button:hover {
+            background-color: #2563eb;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2d3748;
+            color: #cbd5e0;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-column ul li a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #4a5568;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pricing-card {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <!--<div class="logo">HillE<span>Cid</span></div>-->
+             <span style="color:#212223;font-weight:bold;"><h1>Hill<span style="background:#430bd0;color:white;border-radius:3px;padding:0 4px;">CID</span></h1></span>
+            <nav>
+                <ul>
+                    <li><a href="about.html">HOW IT WORKS</a></li>
+                    <li><a href="bronchure.html">WHO WE HELP</a></li>
+                    <li><a href="pricing.html">PRICING</a></li>
+                   <!-- <li><a href="">REVIEWS</a></li>-->
+                    
+                    <li><a href="#">SUBSCRIBE</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Daily support in your pocket.</h1>
+            <p>Enjoy a full year of  <span style="color:#212223;font-weight:bold;">Hill<span style="background:#430bd0;color:white;border-radius:3px;padding:0 4px;">CID</span></span> for less than the price of a single therapy session. 💤</p>
+            <a href="#" class="cta-button">GET STARTED</a>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <div class="container">
+        <div class="testimonial">
+            <p>"I signed up for HillCid the other day, and already the messages have done more for me than the therapists I've seen."</p>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <h2>Choose Your Plan</h2>
+            </div>
+            
+            <div class="pricing-cards">
+                <!-- Personal Plan -->
+                <div class="pricing-card">
+                    <h3>PERSONAL</h3>
+                    <div class="price">sh.200.00/mo</div>
+                    <ul class="features">
+                        <li>Daily peer support</li>
+                        <li>Unlimited bounding</li>
+                        <li>Anonymous & confidential</li>
+                    </ul>
+                    <a href="#" class="card-button">GET STARTED</a>
+                </div>
+                
+                <!-- Gift Plan -->
+                <div class="pricing-card">
+                    <h3>GIFT</h3>
+                    <div class="price">sh.200.00/mo</div>
+                    <ul class="features">
+                        <li>Auto-renewal option</li>
+                        <li>Personal gift message</li>
+                        <li>Birthday/holiday activation</li>
+                    </ul>
+                    <a href="#" class="card-button">GET STARTED</a>
+                </div>
+                
+                <!-- Family Plan -->
+                <div class="pricing-card">
+                    <h3>FAMILY</h3>
+                    <div class="price">sh.100.00/user/mo</div>
+                    <ul class="features">
+                        <li>Conversation starter</li>
+                        <li>Family-friendly content</li>
+                        <li>Synchronised messaging</li>
+                    </ul>
+                    <a href="#" class="card-button">LEARN MORE</a>
+                </div>
+                
+                <!-- Group Plan -->
+                <div class="pricing-card">
+                    <h3>GROUP</h3>
+                    <div class="price">10+ users</div>
+                    <ul class="features">
+                        <li>Turnkey enrollment</li>
+                        <li>Engagement reporting</li>
+                        <li>Co-branded redemption</li>
+                    </ul>
+                    <a href="#" class="card-button">LEARN MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Testimonial -->
+    <div class="container">
+        <div class="testimonial">
+            <p>"I started using HillCid like last week, and I'm already finding myself countering bad thoughts with really positive thoughts."</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Volunteer</h4>
+                    <ul>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Terms of Use</h4>
+                    <ul>
+                        <li><a href="#">Legal Statement</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Requiring annual commitment. Annual subscription, site evaluation</p>
+                <p>Get right at info@hillcid.co.ke that is not part of the website or provides information to others.</p>
+                <p>&copy; 2025   <span style="color:#e5e7e9;font-weight:bold;">Hill<span style="background:#430bd0;color:white;border-radius:3px;padding:0 4px;">CID</span></span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

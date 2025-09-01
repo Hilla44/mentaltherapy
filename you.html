@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HillCid Dataweb</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f7f6;
+            color: #222;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        header img {
+            height: 60px;
+            margin-bottom: 10px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            padding: 6px 12px;
+            transition: background-color 0.3s ease;
+        }
+        nav a.subscribe {
+            background-color: #59956f;
+            color: white;
+            border-radius: 3px;
+        }
+        nav a:hover {
+            background-color: #8fbea6;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        .subscription-box {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgb(0 0 0 / 0.1);
+            max-width: 400px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+        .subscription-box img {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        .subscription-box h2 {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .subscription-box p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 4px;
+            font-weight: 600;
+            text-align: left;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 15px;
+            border: 1px solid #999;
+            border-radius: 3px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .subscribe-btn {
+            background-color: #59956f;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 3px;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        .subscribe-btn:hover {
+            background-color: #447347;
+        }
+        .banner {
+            background: linear-gradient(90deg, #6bb883 0%, #558459 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            font-size: 16px;
+        }
+        .banner img {
+            height: 60px;
+            margin-left: 20px;
+        }
+        .testimonials {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .testimonial {
+            background: white;
+            border: 1px solid #adc7b3;
+            border-radius: 5px;
+            padding: 15px 20px;
+            max-width: 320px;
+            font-size: 13px;
+            color: #3b5940;
+            position: relative;
+            font-style: italic;
+        }
+        .testimonial:before {
+            content: open-quote;
+            font-size: 24px;
+            color: #59956f;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+        }
+        .testimonial:after {
+            content: close-quote;
+            font-size: 24px;
+            color: #59956f;
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+        }
+        .how-it-works {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .how-it-works h3 {
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .step {
+            max-width: 180px;
+        }
+        .step img {
+            height: 70px;
+            margin-bottom: 15px;
+        }
+        .step h4 {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .step p {
+            font-size: 13px;
+            color: #555;
+        }
+        .get-started-btn {
+            background-color: #59956f;
+            border: none;
+            padding: 12px 30px;
+            color: white;
+            border-radius: 3px;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 25px;
+            transition: background-color 0.3s ease;
+        }
+        .get-started-btn:hover {
+            background-color: #447347;
+        }
+        .help-topics {
+            max-width: 400px;
+            margin: 0 auto 70px;
+            font-size: 13px;
+        }
+        .help-topics h3 {
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .help-topics ul {
+            list-style: none;
+            padding-left: 0;
+            columns: 2;
+            gap: 20px;
+        }
+        .help-topics ul li {
+            margin-bottom: 8px;
+        }
+        footer {
+            font-size: 11px;
+            text-align: center;
+            color: #777;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 640px) {
+            .testimonials {
+                flex-direction: column;
+                align-items: center;
+            }
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            .banner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .banner img {
+                margin-top: 10px;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-title">
+    <span style="color:#212223;font-weight:bold;"><h1>Hill<span style="background:#430bd0;color:white;border-radius:3px;padding:0 4px;">CID</span></h1></span>        
+    </div>
+</header>
+
+<nav>
+    
+</nav>
+
+<h1>Start training your brain today 🧠💪</h1>
+<div class="subtitle">
+    Many of us experience <b>anxiety</b>, <b>depression</b>, and <b>negative thoughts</b>, but not everyone chooses to take that crucial next step towards a healthier brain. Go you!
+</div>
+
+<div class="subscription-box" role="form" aria-label="Activate your subscription">
+    <span style="color:#212223;font-weight:bold;"><p>Hill<span style="background:#430bd0;color:white;border-radius:3px;padding:0 4px;">CID</span></p></span>
+    <h2>Activate your subscription</h2>
+    <p>Join tens of thousands of people across the globe who are already feeling happier and healthier than they did yesterday!</p>
+    <form>
+        <label for="phone">Mobile phone number *</label>
+        <input id="phone" name="phone" type="text" placeholder="***********" required />
+        
+        <label for="email">Email address *</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        
+        <button type="submit" class="subscribe-btn">SUBSCRIBE</button>
+    </form>
+</div>
+
+<div class="banner" role="banner">
+    <span>The right text at the right time could change your life.</span>
+    <img src="mediafiles/phone.png" alt="Phone with example texts"style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;"/>
+</div>
+
+<div class="testimonials" aria-label="User testimonials">
+    <div class="testimonial" tabindex="0">
+        Man. HillCid has helped increase my daily moods drastically. I can hardly believe it. These messages are game changing!
+    </div>
+    <div class="testimonial" tabindex="0">
+        HillCid has been integral to my recovery. It got me through the hardest time of my life. Thank you for being a hero!
+    </div>
+</div>
+
+<section class="how-it-works" aria-labelledby="how-it-works-title">
+    <h3 id="how-it-works-title">Awesome! But how does it work?</h3>
+    <div class="steps">
+        <div class="step">
+            <img src="" alt="Text message icon" />
+            <h4>1. We text you</h4>
+            <p>We interrupt your negative thought patterns with something positive.</p>
+        </div>
+        <div class="step">
+            <img src="" alt="Text back icon" />
+            <h4>2. You text back</h4>
+            <p>You use our text thread as a safe space to journal and speak freely.</p>
+        </div>
+        <div class="step">
+            <img src="" alt="Feel better icon" />
+            <h4>3. You feel better</h4>
+            <p>Your brain learns to replace negative thoughts with healthier ones!</p>
+        </div>
+    </div>
+    <button class="get-started-btn">GET STARTED</button>
+</section>
+
+<section class="help-topics" aria-label="What Cope Notes helps with">
+    <h3>What will <span style="color:#212223;font-weight:bold;"><h1>Hill<span style="background:#430bd0;color:white;border-radius:3px;padding:0 4px;">CID</span></h1></span> help me with?</h3>
+    <ul>
+        <li>Hopelessness</li>
+        <li>Relationships</li>
+        <li>Depression</li>
+        <li>Self-image</li>
+        <li>Loneliness</li>
+        <li>Negativity</li>
+        <li>Self-care</li>
+        <li>Anxiety</li>
+        <li>Stress</li>
+        <li>Anger</li>
+    </ul>
+</section>
+
+<footer>
+    &copy; 2025 <span style="color:#212223;font-weight:bold;"><h1>Hill<span style="background:#430bd0;color:white;border-radius:3px;padding:0 4px;">CID</span></h1></span>. All rights reserved.
+</footer>
+
+</body>
+</html>

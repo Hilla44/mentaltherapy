@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gift a Mental Health Subscription</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: #f7f9f9;
+    margin: 0;
+    padding: 0;
+    color: #222;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  header .logo {
+    height: 48px;
+  }
+  nav {
+    margin-left: 32px;
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  nav a {
+    text-decoration: none;
+    color: #444;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #4CAF50;
+  }
+  nav a.subscribe {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 4px;
+  }
+  main {
+    max-width: 640px;
+    margin: 2rem auto;
+    padding: 0 24px;
+  }
+  h1 {
+    font-weight: 700;
+    margin-bottom: 0.1rem;
+    text-align: center;
+    font-size: 1.6rem;
+  }
+  h1 span {
+    font-size: 1.2rem;
+  }
+  p.intro {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  .gift-form {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 0 16px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  .gift-form h2 {
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+  .gift-form img {
+    width: 70px;
+    margin-bottom: 1rem;
+  }
+  .gift-form p {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    color: #666;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    color: #777;
+  }
+  input[type="email"], input[type="tel"] {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  input[type="email"]:focus, input[type="tel"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+  }
+  button.submit-btn {
+    margin-top: 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    letter-spacing: 1px;
+  }
+  button.submit-btn:hover {
+    opacity: 0.9;
+  }
+  .support-banner {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 12px;
+    margin: 3rem 0 2rem;
+    padding: 1.8rem 2.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .support-banner p {
+    flex-grow: 1;
+    font-size: 1.1rem;
+  }
+  .support-banner img {
+    max-height: 140px;
+    border-radius: 10px;
+  }
+  .quotes-section {
+    max-width: 640px;
+    margin: 2rem auto;
+    padding: 0 24px;
+  }
+  blockquote {
+    border-left: 6px solid #4CAF50;
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+    font-style: italic;
+    color: #444;
+    font-size: 0.9rem;
+  }
+  blockquote b {
+    display: block;
+    margin-top: 1rem;
+    color: #333;
+    font-weight: 600;
+    font-style: normal;
+  }
+  .how-it-works {
+    max-width: 640px;
+    margin: 3rem auto 5rem;
+    text-align: center;
+    color: #333;
+  }
+  .how-it-works h3 {
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+  .steps {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .step {
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    padding: 1.5rem 1rem;
+    flex-basis: 180px;
+  }
+  .step img {
+    height: 70px;
+    margin-bottom: 0.7rem;
+  }
+  .step h4 {
+    margin: 0 0 0.5rem 0;
+  }
+  .step p {
+    font-size: 0.85rem;
+    color: #555;
+  }
+  .subscribe-btn {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: 700;
+    padding: 0.9rem 3rem;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    margin-top: 3rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  .subscribe-btn:hover {
+    opacity: 0.9;
+  }
+  .footer {
+  background-color: #0f7c33;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 100px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-column a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-column a:hover {
+  color: #cccccc;
+}
+</style>
+</head>
+<body>
+
+<header>
+  
+  <nav>
+   
+  </nav>
+</header>
+
+<main>
+    <p> <span style="color:#212223;font-weight:bold;"><h1>Hill<span style="background:#430bd0;color:white;border-radius:3px;padding:0 4px;">CID</span></h1></span></p>
+  <h1>Become a mental health hero <span>🦸‍♂️</span></h1>
+  <p class="intro">You don't have to stand by and watch friends or family members struggle – you can make a difference. Give the gift that keeps on giving and offers ongoing support.</p>
+
+  <section class="gift-form" aria-label="Gift Subscription Form">
+    <h2>Give a gift subscription ❤️</h2>
+    <!-- <img src="https://via.placeholder.com/70?text=Brain" alt="Brain icon" />-->
+    <p>We can change someone’s life. All you need is the cell number.</p>
+    <form>
+      <div class="form-group">
+        <label for="phone">Your mobile phone number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="+254*********" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Your email address *</label>
+        <input type="email" id="email" name="email" placeholder="you@email.com" required />
+      </div>
+      <button type="submit" class="submit-btn">GIVE A GIFT</button>
+    </form>
+  </section>
+
+  <section class="support-banner" aria-label="Support friends and family banner">
+    <p>Finally, a simple way to support your friends and family in need.</p>
+    <img src="https://via.placeholder.com/120x140?text=Phone+Mockup" alt="Phone with example texts" />
+  </section>
+
+  <section class="quotes-section">
+    <blockquote>
+      “My 10-year-old son and I have been working with Cope Notes, and it has helped him a lot to manage his anxiety and learn new coping skills.”
+      <b>— Happy Customer</b>
+    </blockquote>
+    <blockquote>
+      “It’s such a simple and effective way to check in with your loved ones and show them support through regular thoughtful messages.”
+      <b>— Another Happy Customer</b>
+    </blockquote>
+  </section>
+
+  <section class="how-it-works" aria-label="How it works">
+    <h3>Sounds awesome! But how does it work?</h3>
+    <div class="steps">
+      <div class="step">
+        <img src="https://via.placeholder.com/70?text=Step+1" alt="Step 1 choose a friend" />
+        <h4>1. Choose a friend</h4>
+        <p>Identify a loved mental health hero & family support.</p>
+      </div>
+      <div class="step">
+        <img src="https://via.placeholder.com/70?text=Step+2" alt="Step 2 make it personal" />
+        <h4>2. Make it personal</h4>
+        <p>Volunteer personalized messages to let them know you care.</p>
+      </div>
+      <div class="step">
+        <img src="https://via.placeholder.com/70?text=Step+3" alt="Step 3 change a life" />
+        <h4>3. Change a life</h4>
+        <p>Show your support and life-changing encouragement every day.</p>
+      </div>
+    </div>
+    <button class="subscribe-btn">GIVE A GIFT SUBSCRIPTION</button>
+  </section>
+</main>
+ <footer class="footer">
+                <div class="footer-column">
+                    <a href="#">Contact</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Partnerships</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#">Volunteer</a>
+                    <a href="#">Feedback</a>
+                    <a href="#">Affiliate Program</a>
+                </div>
+            <div class="footer-column">
+                <a href="#">Terms of Use</a>
+                <a href="#">Legal Statement</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+
+
+</footer>
+
+</body>
+</html>

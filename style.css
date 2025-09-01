@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    background: #fff;
+    color: #2d3748;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eaeaea;
+    padding-top: 20px;
+}
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.logo {
+    width: 100px;
+    height: 100px;
+}
+.subtitle {
+    font-size: 13px;
+    color: #8d99ae;
+}
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    gap: 25px;
+    margin: 20px 0 0 0;
+}
+nav ul li {
+    display: inline;
+}
+nav a, .footer-link {
+    text-decoration: none;
+    color: #2d3748;
+    transition: color 0.2s;
+    font-weight: 500;
+}
+nav a:hover,.footer-link:hover {
+    color: #529e66;
+}
+.subscribe-btn {
+    background: linear-gradient(90deg, #66e39c 0%, #529e66 100%);
+    color: #fff !important;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.main-heading {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.subtext {
+    text-align: center;
+    margin-bottom: 48px;
+    font-size: 1.1rem;
+}
+.bold {
+    font-weight: bold;
+}
+
+.impact-options {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+.impact-card {
+    background: #fafaff;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(80, 94, 151, 0.08);
+    width: 260px;
+    text-align: center;
+    padding: 35px 18px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+.impact-card:hover {
+    box-shadow: 0 6px 24px rgba(80, 94, 151, 0.2);
+}
+.impact-icon img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 16px;
+}
+.impact-card h3 {
+    font-size: 1.3rem;
+    margin: 10px 0 8px;
+    font-weight: 700;
+    color: #2e3d68;
+}
+.option-desc {
+    font-size: 1rem;
+    color: #5a627d;
+    margin-bottom: 19px;
+}
+.support-btn {
+    background: linear-gradient(90deg, #66e39c 0%, #529e66 100%);
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.support-btn:hover {
+    background: linear-gradient(90deg, #529e66 0%, #66e39c 100%);
+}
+
+footer {
+    text-align: center;
+    padding: 38px 0 20px 0;
+    color: #7d8fa5;
+    font-size: 1.1rem;
+}
+.footer-link {
+    color: #529e66;
+    text-decoration: underline;
+    font-weight: 600;
+}
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.menu > .dropdown > a {
+  display: block;
+  padding: 10px 15px;
+  background-color: #e0e0e0;
+  text-decoration: none;
+  color: #000;
+}
+
+/* Dropdown items (initially hidden) */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  min-width: 160px;
+  margin-top: 0;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu .dropdown-item {
+  display: block;
+  padding: 10px 15px;
+  color: #000;
+  text-decoration: none;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #e0e0e0;
+}
+
+.footer {
+  background-color: #0f7c33;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 100px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-column a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-column a:hover {
+  color: #cccccc;
+}
